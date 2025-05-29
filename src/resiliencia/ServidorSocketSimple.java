@@ -8,9 +8,9 @@ public class ServidorSocketSimple {
         int puerto = 5050;
 
         try (ServerSocket serverSocket = new ServerSocket(puerto)) {
-            System.out.println("🚀 Servidor escuchando en puerto " + puerto);
-            serverSocket.accept(); // Acepta una conexión y se cierra
-            System.out.println("✅ Conexión recibida.");
+            System.out.println("Servidor escuchando en puerto " + puerto);
+            serverSocket.accept(); 
+            System.out.println("Conexión recibida.");
         } catch (IOException e) {
             e.printStackTrace();
         }
