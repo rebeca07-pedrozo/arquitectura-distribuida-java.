@@ -24,19 +24,19 @@ public class NodoSimulado implements Runnable {
         if (!activo) {
             throw new IllegalStateException("Nodo " + id + " está inactivo.");
         }
-        System.out.println("✅ Nodo " + id + " ejecutando tarea: " + tarea);
+        System.out.println(" Nodo " + id + " ejecutando tarea: " + tarea);
     }
 
     @Override
     public void run() {
         while (activo) {
             try {
-                Thread.sleep(1000); // Simula espera
+                Thread.sleep(1000); 
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
         }
-        System.out.println("🛑 Nodo " + id + " fue desactivado.");
+        System.out.println(" Nodo " + id + " fue desactivado.");
     }
 
     public int getId() {
