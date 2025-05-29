@@ -18,9 +18,9 @@ public class CircuitBreaker {
         if (estado == Estado.ABIERTO) {
             if (ahora - tiempoApertura > timeout) {
                 estado = Estado.SEMI_ABIERTO;
-                System.out.println("⏳ Circuito en prueba (semi-abierto)...");
+                System.out.println("Circuito en prueba (semi-abierto)...");
             } else {
-                System.out.println("🚫 Circuito abierto. Ejecutando fallback.");
+                System.out.println(" Circuito abierto. Ejecutando fallback.");
                 return fallback.get();
             }
         }
@@ -37,18 +37,18 @@ public class CircuitBreaker {
 
     private void manejarFallo() {
         contadorErrores++;
-        System.out.println("❌ Fallo detectado. Total errores: " + contadorErrores);
+        System.out.println(" Fallo detectado. Total errores: " + contadorErrores);
 
         if (contadorErrores >= maxErrores) {
             estado = Estado.ABIERTO;
             tiempoApertura = System.currentTimeMillis();
-            System.out.println("🛑 Circuito abierto por fallos consecutivos.");
+            System.out.println(" Circuito abierto por fallos consecutivos.");
         }
     }
 
     private void resetear() {
         if (estado != Estado.CERRADO) {
-            System.out.println("✅ Circuito cerrado. Todo estable.");
+            System.out.println(" Circuito cerrado. Todo estable.");
         }
         estado = Estado.CERRADO;
         contadorErrores = 0;
