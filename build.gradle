@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+}
+
+group 'org.arquitectura'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Puedes añadir dependencias si luego necesitas
+}
+
+application {
+    mainClass = 'cliente.Cliente'
+}
