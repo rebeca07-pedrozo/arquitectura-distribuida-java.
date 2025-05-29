@@ -12,6 +12,8 @@ CMD ["java", "-cp", "out", "resiliencia.RetryWithBackoff"]
  docker build -t simulador-java .
 docker run --rm simulador-java
 ```
+Para ejecutar la imagen: *docker run --rm simulador-java*
+
 
 ## Objetivo
 
