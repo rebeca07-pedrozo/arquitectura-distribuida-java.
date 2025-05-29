@@ -12,7 +12,6 @@ public class Cliente {
         new Thread(new ServidorMensaje(5002)).start();
         new Thread(new ServidorMensaje(5003)).start();
 
-        // Esperar que los servidores se inicien
         Thread.sleep(2000);
 
         int[] puertos = {5001, 5002, 5003};
