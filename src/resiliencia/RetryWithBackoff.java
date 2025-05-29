@@ -14,12 +14,12 @@ public class RetryWithBackoff {
             try {
                 System.out.println("Intentando conectar... intento " + intento);
                 Socket socket = new Socket(host, puerto);
-                System.out.println("✅ Conectado exitosamente en el intento " + intento);
+                System.out.println("Conectado exitosamente en el intento " + intento);
                 socket.close();
                 break;
             } catch (IOException e) {
                 int espera = (int) Math.pow(2, intento);
-                System.out.println("❌ Falló la conexión. Reintentando en " + espera + " segundos...");
+                System.out.println("Falló la conexión. Reintentando en " + espera + " segundos...");
                 try {
                     Thread.sleep(espera * 1000L);
                 } catch (InterruptedException ie) {
